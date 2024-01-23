@@ -23,7 +23,7 @@ def process_frame(frame, model, timestamp, previous_positions, lane_changes, out
     if len(result[0].boxes.xyxy) > 0:
         for xyxy, cls, confidence, obj_id in zip(result[0].boxes.xyxy, result[0].boxes.cls, result[0].boxes.conf, result[0].boxes.id):
             x1, y1, x2, y2 = [int(coord) for coord in xyxy]
-            center_x, center_y = abs(x1 + x2) // 2, abs(y1 + y2) // 2
+            center_x, center_y = (abs(x2 - x1) / 2) + x1, (abs(y2 - y1) / 2) + y1
             
             # Determine which lane the object is in
             current_lane = None
@@ -41,7 +41,7 @@ def process_frame(frame, model, timestamp, previous_positions, lane_changes, out
                 
                 # Save the output in lane specific file
                 with open(f"{output_directory}/output_{current_lane}.txt", "a") as file:
-                    file.write(f"{timestamp:.2f} ID: {int(obj_id)} {result[0].names[int(cls)]} {x1, y1} {x2, y2} CENTER : {center_x, center_y}\n")
+                    file.write(f"{timestamp:.2f}, {int(obj_id)}, {result[0].names[int(cls)]}, {x1}, {y1}, {x2}, {y2}, {center_x}, {center_y}, {x1}, {center_y}, {x2}, {center_y}\n")
     draw_lanes(frame, rois)
 
 def run_yolo_tracking(model_path, source_video, rois, save=True, conf=0.5, show=True, line_width=3, output_video_path='output.avi'):
