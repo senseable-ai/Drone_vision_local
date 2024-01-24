@@ -19,9 +19,9 @@ def process_frame(frame, model, timestamp, previous_positions, lane_changes, out
     result = model.track(frame, conf=0.5, persist=True, save_txt=True, tracker='bytetrack.yaml', line_width = 1, show=True)
     if len(result[0].boxes.xywh) > 0:
         for xywh, cls, confidence, obj_id in zip(result[0].boxes.xywh, result[0].boxes.cls, result[0].boxes.conf, result[0].boxes.id):
-            center_x, center_y, width, height = [int(coord) for coord in xywh]
-            x1, y1 = int(center_x - width / 2), int(center_y - height / 2)
-            x2, y2 = int(center_x + width / 2), int(center_y + height / 2)
+            center_x, center_y, width, height = [float(coord) for coord in xywh]
+            x1, y1 = float(center_x - width / 2), float(center_y - height / 2)
+            x2, y2 = float(center_x + width / 2), float(center_y + height / 2)
             # Determine which lane the object is in
             current_lane = None
             for i, roi in enumerate(rois):
@@ -36,7 +36,7 @@ def process_frame(frame, model, timestamp, previous_positions, lane_changes, out
                 previous_positions[obj_id] = current_lane
                 # Save the output in lane specific file
                 with open(f"{output_directory}/output_{current_lane}.txt", "a") as file:
-                    file.write(f"{timestamp:.2f}, {int(obj_id)}, {result[0].names[int(cls)]}, {x1}, {y1}, {x2}, {y2}, {center_x}, {center_y}, {x1}, {center_y}, {x2}, {center_y}, {width}, {height}\n")
+                    file.write(f"{timestamp:.2f}, {int(obj_id)}, {result[0].names[int(cls)]}, {x1:.2f}, {y1:.2f}, {x2:.2f}, {y2:.2f}, {center_x:.2f}, {center_y:.2f}, {x1:.2f}, {center_y:.2f}, {x2:.2f}, {center_y:.2f}, {width:.2f}, {height:.2f}\n")
     draw_lanes(frame, rois)
 def run_yolo_tracking(model_path, source_video, rois, save=True, conf=0.5, show=True, line_width=3, output_video_path='output.avi'):
     current_directory = os.getcwd()
