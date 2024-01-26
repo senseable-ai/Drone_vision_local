@@ -36,16 +36,16 @@ def find_neighboring_ids(frame_data, target_id, roi):
 
         # 차량이 대상 차량의 전방, 후방, 좌측 또는 우측에 있는지 확인
         if center_x < center_x_target:  # 차량이 앞쪽에 존재
-            if center_y < center_y_target:  # 차량이 좌측에 존재
+            if center_y > center_y_target:  # 차량이 좌측에 존재
                 preceding_left_id = row['ID']
-            elif center_y > center_y_target:  # 차량이 우측에 존재
+            elif center_y < center_y_target:  # 차량이 우측에 존재
                 preceding_right_id = row['ID']
             else:
                 preceding_id = row['ID']
         elif center_x > center_x_target:  # 차량이 후방에 존재
-            if center_y < center_y_target:  # 차량이 좌측에 존재
+            if center_y > center_y_target:  # 차량이 좌측에 존재
                 following_left_id = row['ID']
-            elif center_y > center_y_target:  # 차량이 우측에 존재
+            elif center_y < center_y_target:  # 차량이 우측에 존재
                 following_right_id = row['ID']
             else:
                 following_id = row['ID']
