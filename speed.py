@@ -1,6 +1,6 @@
 import pandas as pd
 
-file_path = 'C:/Users/user/Desktop/drone_vision_local/clip/clip1.csv'
+file_path = 'C:/Users/user/Desktop/drone_vision_local/LC/clip11/clip11_coordinate.csv'
 data = pd.read_csv(file_path)
 
 delta_t = 0.03
@@ -23,7 +23,7 @@ data_calculated = data.groupby('ID').apply(calculate_velocity_acceleration)
 
 data_to_save = data_calculated.drop(columns=['x1', 'x2', 'y1', 'y2'])
 
-output_file_path = 'C:/Users/user/Desktop/drone_vision_local/clip/clip1_speed.csv'
+output_file_path = 'C:/Users/user/Desktop/drone_vision_local/LC/clip11/clip11_speed.csv'
 data_to_save.to_csv(output_file_path, index=False)
 
 output_file_path
