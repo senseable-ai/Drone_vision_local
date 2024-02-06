@@ -1,8 +1,5 @@
 import pandas as pd
 
-file_path = 'C:/Users/user/Desktop/drone_vision_local/LC/clip28/clip28_coordinate.csv'
-data = pd.read_csv(file_path)
-
 delta_t = 0.03
 
 def calculate_velocity_acceleration(group):
@@ -19,11 +16,15 @@ def calculate_velocity_acceleration(group):
 
     return group
 
-data_calculated = data.groupby('ID').apply(calculate_velocity_acceleration)
+for clip_number in range(1, 121):
+    try:
+        file_path = f'C:/Users/user/Desktop/drone_vision_local/LC/clip{clip_number}/clip{clip_number}_coordinate.csv'
+        data = pd.read_csv(file_path)
 
-data_to_save = data_calculated.drop(columns=['x1', 'x2', 'y1', 'y2'])
+        data_calculated = data.groupby('ID').apply(calculate_velocity_acceleration)
+        data_to_save = data_calculated.drop(columns=['x1', 'x2', 'y1', 'y2'])
 
-output_file_path = 'C:/Users/user/Desktop/drone_vision_local/LC/clip28/clip28_speed.csv'
-data_to_save.to_csv(output_file_path, index=False)
-
-output_file_path
+        output_file_path = f'C:/Users/user/Desktop/drone_vision_local/LC/clip{clip_number}/clip{clip_number}_speed.csv'
+        data_to_save.to_csv(output_file_path, index=False)
+    except Exception as e:
+        print(f"Error in processing clip{clip_number}: {e}")
