@@ -5,9 +5,6 @@ import json
 import os
 
 def is_point_in_roi(point, roi):
-    """
-    Check if a given point is inside the specified ROI.
-    """
     roi_path = Path(roi)
     return roi_path.contains_point(point)
 
@@ -20,13 +17,10 @@ def final_correct_surrounding_vehicles_using_x_coordinate(df, target_id, rois, r
         lane = target['lane']
         center_x, center_y = target['center_x'], target['center_y']
 
-        # Define new ROI boundaries based on x coordinate
         roi_left = center_x - roi_size[0] / 2
         roi_right = center_x + roi_size[0] / 2
 
-        # Find vehicles in the same frame and within the new ROI
-        frame_vehicles = df[(df['frame'] == frame) &
-                            (df['center_x'] >= roi_left) & (df['center_x'] <= roi_right)]
+        frame_vehicles = df[(df['frame'] == frame) & (df['center_x'] >= roi_left) & (df['center_x'] <= roi_right)]
 
         surrounding_vehicles = {
             'frame': frame,
@@ -51,32 +45,31 @@ def final_correct_surrounding_vehicles_using_x_coordinate(df, target_id, rois, r
             if vehicle_lane is None:
                 continue
 
-            # Correctly determine the position of the vehicle relative to the target vehicle using x coordinate
-            if vehicle['center_x'] > center_x:  # Following vehicles
+            if vehicle['center_x'] > center_x:
                 if vehicle_lane == lane:
                     surrounding_vehicles['following'] = vehicle['ID']
-                elif vehicle_lane < lane:  # Right side
+                elif vehicle_lane < lane:
                     surrounding_vehicles['right_following'] = vehicle['ID']
-                elif vehicle_lane > lane:  # Left side
+                elif vehicle_lane > lane:
                     surrounding_vehicles['left_following'] = vehicle['ID']
-            elif vehicle['center_x'] < center_x:  # Leading vehicles
+            elif vehicle['center_x'] < center_x:
                 if vehicle_lane == lane:
                     surrounding_vehicles['leading'] = vehicle['ID']
-                elif vehicle_lane < lane:  # Right side
+                elif vehicle_lane < lane:
                     surrounding_vehicles['right_leading'] = vehicle['ID']
-                elif vehicle_lane > lane:  # Left side
+                elif vehicle_lane > lane:
                     surrounding_vehicles['left_leading'] = vehicle['ID']
 
         surrounding_vehicles_data.append(surrounding_vehicles)
 
     return pd.DataFrame(surrounding_vehicles_data)
 
-# Load ROIs from JSON file
+# JSON 파일에서 ROI 로드
 roi_file_path = '/Users/user/Desktop/drone_vision_local/roi/roi.json'
 with open(roi_file_path, 'r') as file:
-    rois = json.load(file)
+    rois_data = json.load(file)
 
-# Vehicle ID mapping
+base_path = '/Users/user/Desktop/drone_vision_local/LC'
 vehicle_id_mapping = {1:38, 2:42, 3:12, 4:10, 5:20, 6:34, 10:7, 11:2, 12:11, 13:26, 14:13, 15:39, 16:28, 17:2, 18:4, 19:8, 20:30,
                       21:5, 22:31, 23:17, 24:26, 25:11, 26:15, 28:23, 29:1, 30:8, 31:24, 32:2, 33:21, 35:13, 36:18, 37:15, 38:29,
                       39:13, 40:9, 41:10, 42:8, 43:16, 44:13, 45:8, 46:27, 47:45, 48:9, 49:25, 50:6, 51:4, 52:5, 53:14, 54:31, 55:3,
@@ -85,20 +78,18 @@ vehicle_id_mapping = {1:38, 2:42, 3:12, 4:10, 5:20, 6:34, 10:7, 11:2, 12:11, 13:
                       94:15, 95:15, 96:48, 97:58, 98:29, 99:35, 100:7, 101:13, 102:19, 103:15, 104:2, 106:1, 107:6, 108:8, 110:5, 111:2,
                       112:25, 118:4}
 
-# Process each clip
-base_path = '/Users/user/Desktop/drone_vision_local/LC'
-for clip_number in range(1, 120):
+for clip_number, target_id in vehicle_id_mapping.items():
     try:
         csv_file_path = f'{base_path}/clip{clip_number}/clip{clip_number}_speed.csv'
         if not os.path.exists(csv_file_path):
-            continue  # Skip if file does not exist
+            continue
         
         df = pd.read_csv(csv_file_path)
-        target_vehicle_id = vehicle_id_mapping.get(clip_number)
-        if target_vehicle_id is not None:
-            surrounding_vehicles = final_correct_surrounding_vehicles_using_x_coordinate(df, target_vehicle_id, rois, roi_size=(300, 50))
-            output_csv_path = f'{base_path}/clip{clip_number}/clip{clip_number}_sv.csv'
-            surrounding_vehicles.to_csv(output_csv_path, index=False)
-            print(f"Results saved to {output_csv_path}")
+        rois = rois_data[str(clip_number)]  # 클립 번호에 맞는 ROI 로드
+        
+        surrounding_vehicles = final_correct_surrounding_vehicles_using_x_coordinate(df, target_id, rois, roi_size=(300, 50))
+        output_csv_path = f'{base_path}/clip{clip_number}/clip{clip_number}_sv.csv'
+        surrounding_vehicles.to_csv(output_csv_path, index=False)
+        print(f"Results saved to {output_csv_path}")
     except Exception as e:
         print(f"Error processing clip {clip_number}: {e}")
