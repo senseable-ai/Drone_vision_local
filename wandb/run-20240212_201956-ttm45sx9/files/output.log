@@ -1,0 +1,10 @@
+X_train shape: (45567, 31)
+X_test shape: (11392, 31)
+Traceback (most recent call last):
+  File "c:/Users/user/Desktop/drone_vision_local/test_trans.py", line 132, in <module>
+    outputs = model(inputs)
+  File "C:\Users\user\anaconda3\envs\hong_sj\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "c:/Users/user/Desktop/drone_vision_local/test_trans.py", line 60, in forward
+    src = src.permute(1, 0, 2)
+RuntimeError: permute(sparse_coo): number of dimensions in the tensor input does not match the length of the desired ordering of dimensions i.e. input.dim() = 2 is not equal to len(dims) = 3

@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-def load_preprocessed_data(file_path='/home/user/drone-vision/drone_vision_local/combined_data.csv'):
+def load_preprocessed_data(file_path='C:/Users/user/Desktop/drone_vision_local/combined_data.csv'):
     # 데이터 로드
     data = pd.read_csv(file_path)
 

@@ -1,0 +1,297 @@
+2024-02-12 20:40:38,371 INFO    StreamThr :15404 [internal.py:wandb_internal():86] W&B internal server running at pid: 15404, started at: 2024-02-12 20:40:38.370904
+2024-02-12 20:40:38,373 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status
+2024-02-12 20:40:38,378 INFO    WriterThread:15404 [datastore.py:open_for_write():87] open: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\run-psfnrj9f.wandb
+2024-02-12 20:40:38,379 DEBUG   SenderThread:15404 [sender.py:send():382] send: header
+2024-02-12 20:40:38,399 DEBUG   SenderThread:15404 [sender.py:send():382] send: run
+2024-02-12 20:40:39,087 INFO    SenderThread:15404 [dir_watcher.py:__init__():211] watching files in: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files
+2024-02-12 20:40:39,087 INFO    SenderThread:15404 [sender.py:_start_run_threads():1136] run started: psfnrj9f with start time 1707738038.371903
+2024-02-12 20:40:39,094 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: check_version
+2024-02-12 20:40:39,095 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: check_version
+2024-02-12 20:40:39,339 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: run_start
+2024-02-12 20:40:39,370 DEBUG   HandlerThread:15404 [system_info.py:__init__():27] System info init
+2024-02-12 20:40:39,370 DEBUG   HandlerThread:15404 [system_info.py:__init__():42] System info init done
+2024-02-12 20:40:39,370 INFO    HandlerThread:15404 [system_monitor.py:start():194] Starting system monitor
+2024-02-12 20:40:39,370 INFO    SystemMonitor:15404 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-02-12 20:40:39,370 INFO    HandlerThread:15404 [system_monitor.py:probe():214] Collecting system info
+2024-02-12 20:40:39,373 INFO    SystemMonitor:15404 [interfaces.py:start():190] Started cpu monitoring
+2024-02-12 20:40:39,374 INFO    SystemMonitor:15404 [interfaces.py:start():190] Started disk monitoring
+2024-02-12 20:40:39,374 INFO    SystemMonitor:15404 [interfaces.py:start():190] Started gpu monitoring
+2024-02-12 20:40:39,374 INFO    SystemMonitor:15404 [interfaces.py:start():190] Started memory monitoring
+2024-02-12 20:40:39,378 INFO    SystemMonitor:15404 [interfaces.py:start():190] Started network monitoring
+2024-02-12 20:40:39,387 DEBUG   HandlerThread:15404 [system_info.py:probe():151] Probing system
+2024-02-12 20:40:39,388 DEBUG   HandlerThread:15404 [system_info.py:_probe_git():136] Probing git
+2024-02-12 20:40:39,439 DEBUG   HandlerThread:15404 [system_info.py:_probe_git():144] Probing git done
+2024-02-12 20:40:39,439 DEBUG   HandlerThread:15404 [system_info.py:probe():199] Probing system done
+2024-02-12 20:40:39,439 DEBUG   HandlerThread:15404 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.8.18', 'heartbeatAt': '2024-02-12T11:40:39.387057', 'startedAt': '2024-02-12T11:40:38.363904', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'c:/Users/user/Desktop/drone_vision_local/test_trans.py', 'codePathLocal': 'test_trans.py', 'codePath': 'test_trans.py', 'git': {'remote': 'https://github.com/senseable-ai/drone_vision_local.git', 'commit': '1ad0125d07ff3532809b54b97dd1997f51327e6f'}, 'email': 'hongs2000813@gmail.com', 'root': 'C:/Users/user/Desktop/drone_vision_local', 'host': 'DESKTOP-P12V4EU', 'username': 'user', 'executable': 'C:\\Users\\user\\anaconda3\\envs\\hong_sj\\python.exe', 'cpu_count': 16, 'cpu_count_logical': 24, 'cpu_freq': {'current': 3200.0, 'min': 0.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 3200.0, 'min': 0.0, 'max': 3200.0}], 'disk': {'/': {'total': 457.59081649780273, 'used': 157.16851043701172}}, 'gpu': 'NVIDIA GeForce RTX 3080', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3080', 'memory_total': 10737418240}], 'memory': {'total': 63.77560043334961}}
+2024-02-12 20:40:39,439 INFO    HandlerThread:15404 [system_monitor.py:probe():224] Finished collecting system info
+2024-02-12 20:40:39,439 INFO    HandlerThread:15404 [system_monitor.py:probe():227] Publishing system info
+2024-02-12 20:40:39,439 DEBUG   HandlerThread:15404 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-02-12 20:40:39,440 ERROR   HandlerThread:15404 [system_info.py:_save_conda():219] Error saving conda packages: [WinError 2] 지정된 파일을 찾을 수 없습니다
+Traceback (most recent call last):
+  File "C:\Users\user\anaconda3\envs\hong_sj\lib\site-packages\wandb\sdk\internal\system\system_info.py", line 215, in _save_conda
+    subprocess.call(
+  File "C:\Users\user\anaconda3\envs\hong_sj\lib\subprocess.py", line 340, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "C:\Users\user\anaconda3\envs\hong_sj\lib\subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\user\anaconda3\envs\hong_sj\lib\subprocess.py", line 1327, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+FileNotFoundError: [WinError 2] 지정된 파일을 찾을 수 없습니다
+2024-02-12 20:40:39,441 DEBUG   HandlerThread:15404 [system_info.py:_save_conda():220] Saving conda packages done
+2024-02-12 20:40:39,443 INFO    HandlerThread:15404 [system_monitor.py:probe():229] Finished publishing system info
+2024-02-12 20:40:39,449 DEBUG   SenderThread:15404 [sender.py:send():382] send: files
+2024-02-12 20:40:39,449 INFO    SenderThread:15404 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-02-12 20:40:39,453 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: python_packages
+2024-02-12 20:40:39,453 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: python_packages
+2024-02-12 20:40:39,454 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:40:39,454 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:40:39,455 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:40:39,741 DEBUG   SenderThread:15404 [sender.py:send():382] send: telemetry
+2024-02-12 20:40:40,091 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\conda-environment.yaml
+2024-02-12 20:40:40,091 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\requirements.txt
+2024-02-12 20:40:40,091 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:40:40,091 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\wandb-metadata.json
+2024-02-12 20:40:40,528 INFO    wandb-upload_0:15404 [upload_job.py:push():131] Uploaded file C:\Users\user\AppData\Local\Temp\tmp7ya3_p69wandb\imfylu5s-wandb-metadata.json
+2024-02-12 20:40:42,109 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:40:43,775 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:40:48,824 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:40:53,860 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:40:54,457 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:40:54,457 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:40:54,457 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:40:58,230 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:40:59,838 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:04,880 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:09,456 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:41:09,456 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:41:09,471 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:41:10,730 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:11,341 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\config.yaml
+2024-02-12 20:41:12,344 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:41:16,629 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:21,676 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:24,451 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:41:24,452 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:41:24,481 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:41:26,768 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:28,488 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:41:32,132 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:37,166 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:39,384 DEBUG   SystemMonitor:15404 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-02-12 20:41:39,384 DEBUG   SenderThread:15404 [sender.py:send():382] send: stats
+2024-02-12 20:41:39,458 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:41:39,458 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:41:39,488 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:41:42,330 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:42,616 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:41:47,375 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:52,417 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:54,474 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:41:54,474 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:41:54,489 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:41:57,472 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:41:58,747 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:42:02,517 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:07,572 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:09,397 DEBUG   SenderThread:15404 [sender.py:send():382] send: stats
+2024-02-12 20:42:09,487 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:42:09,488 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:42:09,502 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:42:12,806 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:14,869 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:42:18,652 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:23,687 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:24,497 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:42:24,498 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:42:24,512 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:42:28,851 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:32,996 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:42:34,437 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:39,398 DEBUG   SenderThread:15404 [sender.py:send():382] send: stats
+2024-02-12 20:42:39,518 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:42:39,518 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:42:39,519 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:39,519 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:42:44,831 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:49,136 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:42:49,841 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:42:54,522 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:42:54,522 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:42:54,522 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:42:55,777 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:00,817 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:03,247 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:43:05,958 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:09,406 DEBUG   SenderThread:15404 [sender.py:send():382] send: stats
+2024-02-12 20:43:09,530 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:43:09,545 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:43:09,545 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:43:11,816 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:16,402 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-12 20:43:16,403 DEBUG   SenderThread:15404 [sender.py:send():382] send: history
+2024-02-12 20:43:16,403 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: summary_record
+2024-02-12 20:43:16,403 INFO    SenderThread:15404 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-12 20:43:17,348 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:43:17,349 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\wandb-summary.json
+2024-02-12 20:43:17,407 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:22,451 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:24,534 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:43:24,564 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-12 20:43:24,565 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: stop_status
+2024-02-12 20:43:27,890 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:32,941 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:34,789 DEBUG   SenderThread:15404 [sender.py:send():382] send: files
+2024-02-12 20:43:34,790 INFO    SenderThread:15404 [sender.py:_save_file():1403] saving file media\images\ROC Curve_1_c490ef72e7ee43e00cd4.png with policy now
+2024-02-12 20:43:34,790 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-12 20:43:34,792 DEBUG   SenderThread:15404 [sender.py:send():382] send: history
+2024-02-12 20:43:34,792 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: summary_record
+2024-02-12 20:43:34,793 INFO    SenderThread:15404 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-12 20:43:34,793 DEBUG   SenderThread:15404 [sender.py:send():382] send: telemetry
+2024-02-12 20:43:34,793 DEBUG   SenderThread:15404 [sender.py:send():382] send: exit
+2024-02-12 20:43:34,793 INFO    SenderThread:15404 [sender.py:send_exit():589] handling exit code: 0
+2024-02-12 20:43:34,793 INFO    SenderThread:15404 [sender.py:send_exit():591] handling runtime: 175
+2024-02-12 20:43:34,794 INFO    SenderThread:15404 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-12 20:43:34,794 INFO    SenderThread:15404 [sender.py:send_exit():597] send defer
+2024-02-12 20:43:34,794 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:34,794 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 0
+2024-02-12 20:43:34,796 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:34,796 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-02-12 20:43:34,796 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 1
+2024-02-12 20:43:34,796 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:34,796 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 1
+2024-02-12 20:43:34,796 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:34,796 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-02-12 20:43:34,796 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 2
+2024-02-12 20:43:34,796 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:34,796 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 2
+2024-02-12 20:43:34,796 INFO    HandlerThread:15404 [system_monitor.py:finish():203] Stopping system monitor
+2024-02-12 20:43:34,797 DEBUG   SystemMonitor:15404 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-02-12 20:43:34,797 INFO    HandlerThread:15404 [interfaces.py:finish():202] Joined cpu monitor
+2024-02-12 20:43:34,800 DEBUG   SystemMonitor:15404 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-02-12 20:43:34,800 INFO    HandlerThread:15404 [interfaces.py:finish():202] Joined disk monitor
+2024-02-12 20:43:34,820 INFO    HandlerThread:15404 [interfaces.py:finish():202] Joined gpu monitor
+2024-02-12 20:43:34,820 INFO    HandlerThread:15404 [interfaces.py:finish():202] Joined memory monitor
+2024-02-12 20:43:34,820 INFO    HandlerThread:15404 [interfaces.py:finish():202] Joined network monitor
+2024-02-12 20:43:34,821 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:34,821 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-02-12 20:43:34,821 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 3
+2024-02-12 20:43:34,821 DEBUG   SenderThread:15404 [sender.py:send():382] send: stats
+2024-02-12 20:43:34,821 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:34,821 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 3
+2024-02-12 20:43:34,821 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:34,821 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-02-12 20:43:34,821 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 4
+2024-02-12 20:43:34,822 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:34,822 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 4
+2024-02-12 20:43:34,822 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:34,822 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-02-12 20:43:34,822 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 5
+2024-02-12 20:43:34,822 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:34,822 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 5
+2024-02-12 20:43:34,822 DEBUG   SenderThread:15404 [sender.py:send():382] send: summary
+2024-02-12 20:43:34,823 INFO    SenderThread:15404 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-12 20:43:34,823 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:34,823 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-02-12 20:43:34,823 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 6
+2024-02-12 20:43:34,823 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:34,823 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 6
+2024-02-12 20:43:34,823 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:34,823 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-02-12 20:43:34,825 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: status_report
+2024-02-12 20:43:35,065 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 7
+2024-02-12 20:43:35,065 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:35,065 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 7
+2024-02-12 20:43:35,065 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:35,065 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-02-12 20:43:35,250 INFO    wandb-upload_0:15404 [upload_job.py:push():131] Uploaded file C:\Users\user\AppData\Local\Temp\tmp7ya3_p69wandb\ss96h1dd-media/images/ROC Curve_1_c490ef72e7ee43e00cd4.png
+2024-02-12 20:43:35,505 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\config.yaml
+2024-02-12 20:43:35,506 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\wandb-summary.json
+2024-02-12 20:43:35,506 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\media\images\ROC Curve_1_c490ef72e7ee43e00cd4.png
+2024-02-12 20:43:35,507 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\media
+2024-02-12 20:43:35,508 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\media\images
+2024-02-12 20:43:35,792 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-12 20:43:36,272 INFO    wandb-upload_0:15404 [upload_job.py:push():131] Uploaded file C:\Users\user\AppData\Local\Temp\tmp7ya3_p69wandb\aqpnd4ly-media/images/ROC Curve_1_c490ef72e7ee43e00cd4.png
+2024-02-12 20:43:36,431 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 8
+2024-02-12 20:43:36,431 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: poll_exit
+2024-02-12 20:43:36,432 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:36,432 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 8
+2024-02-12 20:43:36,433 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:36,433 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-02-12 20:43:36,433 INFO    SenderThread:15404 [job_builder.py:build():296] Attempting to build job artifact
+2024-02-12 20:43:36,433 INFO    SenderThread:15404 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-02-12 20:43:36,465 INFO    SenderThread:15404 [job_builder.py:build():402] adding wandb-job metadata file
+2024-02-12 20:43:36,474 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 9
+2024-02-12 20:43:36,475 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:36,475 DEBUG   SenderThread:15404 [sender.py:send():382] send: artifact
+2024-02-12 20:43:36,475 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 9
+2024-02-12 20:43:36,519 INFO    Thread-17 :15404 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:43:36,808 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-12 20:43:37,922 INFO    wandb-upload_0:15404 [upload_job.py:push():86] Skipped uploading C:\Users\user\AppData\Local\wandb\wandb\artifacts\staging\tmporeuyeq1
+2024-02-12 20:43:38,413 INFO    wandb-upload_1:15404 [upload_job.py:push():89] Uploaded file C:\Users\user\AppData\Local\wandb\wandb\artifacts\staging\tmpv1y7k8vk
+2024-02-12 20:43:39,759 INFO    SenderThread:15404 [sender.py:send_artifact():1494] sent artifact job-https___github.com_senseable-ai_drone_vision_local.git_test_trans.py - {'id': 'QXJ0aWZhY3Q6NzE5OTY5MTUy', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzOTEyMTA0OA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzE5OTYxOTk2', 'versionIndex': 1}}}
+2024-02-12 20:43:39,759 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:39,760 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-02-12 20:43:39,760 INFO    SenderThread:15404 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-02-12 20:43:40,542 INFO    SenderThread:15404 [dir_watcher.py:finish():388] scan: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files
+2024-02-12 20:43:40,543 INFO    SenderThread:15404 [dir_watcher.py:finish():402] scan save: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\conda-environment.yaml conda-environment.yaml
+2024-02-12 20:43:40,543 INFO    SenderThread:15404 [dir_watcher.py:finish():402] scan save: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\config.yaml config.yaml
+2024-02-12 20:43:40,543 INFO    SenderThread:15404 [dir_watcher.py:finish():402] scan save: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log output.log
+2024-02-12 20:43:40,544 INFO    SenderThread:15404 [dir_watcher.py:finish():402] scan save: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\requirements.txt requirements.txt
+2024-02-12 20:43:40,546 INFO    SenderThread:15404 [dir_watcher.py:finish():402] scan save: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\wandb-metadata.json wandb-metadata.json
+2024-02-12 20:43:40,546 INFO    SenderThread:15404 [dir_watcher.py:finish():402] scan save: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\wandb-summary.json wandb-summary.json
+2024-02-12 20:43:40,549 INFO    SenderThread:15404 [dir_watcher.py:finish():402] scan save: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\media\images\ROC Curve_1_c490ef72e7ee43e00cd4.png media/images/ROC Curve_1_c490ef72e7ee43e00cd4.png
+2024-02-12 20:43:40,549 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 10
+2024-02-12 20:43:40,550 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: poll_exit
+2024-02-12 20:43:40,550 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:40,550 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 10
+2024-02-12 20:43:40,550 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:40,550 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-02-12 20:43:40,550 INFO    SenderThread:15404 [file_pusher.py:finish():172] shutting down file pusher
+2024-02-12 20:43:40,843 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-12 20:43:40,843 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: poll_exit
+2024-02-12 20:43:40,996 INFO    wandb-upload_0:15404 [upload_job.py:push():131] Uploaded file C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\config.yaml
+2024-02-12 20:43:41,208 INFO    wandb-upload_1:15404 [upload_job.py:push():131] Uploaded file C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\output.log
+2024-02-12 20:43:41,253 INFO    wandb-upload_3:15404 [upload_job.py:push():131] Uploaded file C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\wandb-summary.json
+2024-02-12 20:43:41,483 INFO    wandb-upload_2:15404 [upload_job.py:push():131] Uploaded file C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\files\requirements.txt
+2024-02-12 20:43:41,691 INFO    Thread-16 :15404 [sender.py:transition_state():617] send defer: 11
+2024-02-12 20:43:41,691 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:41,691 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 11
+2024-02-12 20:43:41,692 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:41,692 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-02-12 20:43:41,692 INFO    SenderThread:15404 [file_pusher.py:join():178] waiting for file pusher
+2024-02-12 20:43:41,693 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 12
+2024-02-12 20:43:41,693 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:41,693 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 12
+2024-02-12 20:43:41,693 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:41,693 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-02-12 20:43:41,693 INFO    SenderThread:15404 [file_stream.py:finish():595] file stream finish called
+2024-02-12 20:43:41,843 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-12 20:43:41,901 INFO    SenderThread:15404 [file_stream.py:finish():599] file stream finish is done
+2024-02-12 20:43:41,901 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 13
+2024-02-12 20:43:41,901 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: poll_exit
+2024-02-12 20:43:41,901 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:41,901 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 13
+2024-02-12 20:43:41,902 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:41,902 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-02-12 20:43:41,902 INFO    SenderThread:15404 [sender.py:transition_state():617] send defer: 14
+2024-02-12 20:43:41,902 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: defer
+2024-02-12 20:43:41,902 DEBUG   SenderThread:15404 [sender.py:send():382] send: final
+2024-02-12 20:43:41,902 INFO    HandlerThread:15404 [handler.py:handle_request_defer():172] handle defer: 14
+2024-02-12 20:43:41,902 DEBUG   SenderThread:15404 [sender.py:send():382] send: footer
+2024-02-12 20:43:41,902 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: defer
+2024-02-12 20:43:41,902 INFO    SenderThread:15404 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-02-12 20:43:41,903 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-12 20:43:41,903 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: poll_exit
+2024-02-12 20:43:41,904 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-12 20:43:41,904 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: server_info
+2024-02-12 20:43:41,904 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: get_summary
+2024-02-12 20:43:41,904 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: sampled_history
+2024-02-12 20:43:41,904 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: server_info
+2024-02-12 20:43:41,905 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: job_info
+2024-02-12 20:43:42,099 DEBUG   SenderThread:15404 [sender.py:send_request():409] send_request: job_info
+2024-02-12 20:43:42,102 DEBUG   HandlerThread:15404 [handler.py:handle_request():146] handle_request: shutdown
+2024-02-12 20:43:42,102 INFO    HandlerThread:15404 [handler.py:finish():869] shutting down handler
+2024-02-12 20:43:42,909 INFO    WriterThread:15404 [datastore.py:close():296] close: C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_204038-psfnrj9f\run-psfnrj9f.wandb
+2024-02-12 20:43:43,114 INFO    SenderThread:15404 [sender.py:finish():1572] shutting down sender
+2024-02-12 20:43:43,114 INFO    SenderThread:15404 [file_pusher.py:finish():172] shutting down file pusher
+2024-02-12 20:43:43,114 INFO    SenderThread:15404 [file_pusher.py:join():178] waiting for file pusher
