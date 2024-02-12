@@ -1,0 +1,5 @@
+X_train shape: (39865, 10, 34)
+X_val shape: (8542, 10, 34)
+X_test shape: (8543, 10, 34)
+Epoch 1: Train Loss: 0.43942705496477014, Val Loss: 0.156560072703148
+Epoch 2: Train Loss: 0.13855226051348907, Val Loss: 0.11967125023478892

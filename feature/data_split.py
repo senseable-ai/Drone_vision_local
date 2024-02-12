@@ -26,7 +26,7 @@ def load_preprocessed_data(file_path='C:/Users/user/Desktop/drone_vision_local/c
     sequences = np.array(sequences)
 
     # 학습, 검증, 테스트 세트 분할
-    targets = data['lane'][sequence_length-1:].values # 예제로 'lane' 열을 타겟으로 사용
+    targets = data['LC'][sequence_length-1:].values # 예제로 'lane' 열을 타겟으로 사용
     X_train, X_temp, y_train, y_temp = train_test_split(sequences, targets, test_size=0.3, random_state=42)
     X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)
     

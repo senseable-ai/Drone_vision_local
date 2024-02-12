@@ -1,9 +1,9 @@
-#%%
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import TensorDataset, DataLoader
-from data_split import load_preprocessed_data
+# 수정된 data_split.py에서 전처리된 데이터 로드 함수 불러오기
+from feature.data_split import load_preprocessed_data
 
 # 데이터 로드
 X_train, X_val, X_test, y_train, y_val, y_test = load_preprocessed_data()
@@ -21,11 +21,9 @@ class TimeSeriesTransformer(nn.Module):
         self.output_proj = nn.Linear(d_model, 1) # 예제는 1차원 출력을 가정
 
     def forward(self, src):
-        # src shape 변환: [batch size, sequence length, features] -> [sequence length, batch size, features]
-        src = src.permute(1, 0, 2)
         src = self.input_proj(src)
         output = self.transformer(src, src)
-        output = self.output_proj(output[-1, :, :]) # 마지막 시퀀스 요소의 출력만 사용
+        output = self.output_proj(output[:, -1, :])
         return output
 
 # 하이퍼파라미터 설정
@@ -62,7 +60,7 @@ for epoch in range(epochs):
         loss.backward()
         optimizer.step()
         train_loss += loss.item()
-        if batch_idx % 10 == 0:  # Adjust based on your preference
+        if batch_idx % 10 == 0:  # Adjust the frequency of printing based on your preference
             print(f'Epoch {epoch+1}, Batch {batch_idx+1}/{len(train_loader)}, Train Loss: {loss.item()}')
 
     # 검증
@@ -74,11 +72,3 @@ for epoch in range(epochs):
             loss = criterion(outputs.squeeze(), targets)
             val_loss += loss.item()
     print(f'Epoch {epoch+1}, Average Train Loss: {train_loss / len(train_loader)}, Val Loss: {val_loss / len(val_loader)}')
-
-# 모델 저장
-torch.save(model.state_dict(), 'lane_change_model.pth')
-
-#%%
-model.load_state_dict(torch.load('lane_change_model.pth'))
-model.eval()
-# %%

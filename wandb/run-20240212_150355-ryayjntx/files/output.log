@@ -1,0 +1,13 @@
+X_train shape: (39865, 10, 34)
+X_val shape: (8542, 10, 34)
+X_test shape: (8543, 10, 34)
+Traceback (most recent call last):
+  File "c:\Users\user\Desktop\drone_vision_local\final_transformer.py", line 85, in <module>
+    state_dict = torch.load(model_path, map_location=device)
+  File "c:\Users\user\anaconda3\envs\torch4\lib\site-packages\torch\serialization.py", line 771, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "c:\Users\user\anaconda3\envs\torch4\lib\site-packages\torch\serialization.py", line 270, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "c:\Users\user\anaconda3\envs\torch4\lib\site-packages\torch\serialization.py", line 251, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/user/drone-vision/drone_vision_local/lane_change_model_optuna.pth'

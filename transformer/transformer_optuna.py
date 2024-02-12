@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import TensorDataset, DataLoader
-from modified_data_split import load_preprocessed_data
+from feature.modified_data_split import load_preprocessed_data
 import wandb
 import optuna
 import numpy as np
