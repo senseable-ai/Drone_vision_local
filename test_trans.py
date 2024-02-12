@@ -24,7 +24,7 @@ seed_everything()
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 # Initialize wandb
-wandb.init(project="test2", entity="finnn")
+wandb.init(project="final", entity="imjaegyun")
 # Load data (You should define load_preprocessed_data function or replace it with actual data loading)
 X_train, X_test, y_train, y_test = load_preprocessed_data()
 class PositionalEncoding(nn.Module):
@@ -118,7 +118,11 @@ for epoch in range(config["epochs"]):
         loss.backward()
         optimizer.step()
         train_loss += loss.item()
+    wandb.log({
+"Train Loss": train_loss / len(train_loader)
+})
     print(f'Epoch {epoch+1}: Train Loss: {train_loss / len(train_loader)}')
+    
     # Validation loop can be added here
 # Test loop and metrics calculation
 test_dataset = TensorDataset(X_test_padded, y_test_tensor)
@@ -132,25 +136,24 @@ with torch.no_grad():
         predictions = torch.sigmoid(outputs).squeeze()
         true_labels.extend(labels.cpu().numpy())
         pred_scores.extend(predictions.cpu().numpy())  # 변경: 이진 예측 대신 확률 저장
-# Calculate metrics
-accuracy = accuracy_score(true_labels, (np.array(pred_scores) > 0.5).astype(int))
-precision = precision_score(true_labels, (np.array(pred_scores) > 0.5).astype(int))
-recall = recall_score(true_labels, (np.array(pred_scores) > 0.5).astype(int))
-f1 = f1_score(true_labels, (np.array(pred_scores) > 0.5).astype(int))
-cm = confusion_matrix(true_labels, (np.array(pred_scores) > 0.5).astype(int))
-TP, FP, FN, TN = cm[1, 1], cm[0, 1], cm[1, 0], cm[0, 0]
-# Log metrics to W&B
-wandb.log({
-    "Accuracy": accuracy,
-    "Precision": precision,
-    "Recall": recall,
-    "F1 Score": f1,
-    "TP": TP,
-    "FN": FN,
-    "FP": FP,
-    "TN": TN,
-    "Epoch Loss": train_loss / len(train_loader)  # 추가: 에폭 손실 기록
-})
+        # Calculate metrics
+        accuracy = accuracy_score(true_labels, (np.array(pred_scores) > 0.5).astype(int))
+        precision = precision_score(true_labels, (np.array(pred_scores) > 0.5).astype(int))
+        recall = recall_score(true_labels, (np.array(pred_scores) > 0.5).astype(int))
+        f1 = f1_score(true_labels, (np.array(pred_scores) > 0.5).astype(int))
+        cm = confusion_matrix(true_labels, (np.array(pred_scores) > 0.5).astype(int))
+        TP, FP, FN, TN = cm[1, 1], cm[0, 1], cm[1, 0], cm[0, 0]
+        # Log metrics to W&B
+        wandb.log({
+            "Accuracy": accuracy,
+            "Precision": precision,
+            "Recall": recall,
+            "F1 Score": f1,
+            "TP": TP,
+            "FN": FN,
+            "FP": FP,
+            "TN": TN,
+        })
 # ROC Curve 계산 및 그리기
 fpr, tpr, thresholds = roc_curve(true_labels, pred_scores)
 roc_auc = roc_auc_score(true_labels, pred_scores)

@@ -1,0 +1,14 @@
+X_train shape: (45567, 31)
+X_test shape: (11392, 31)
+Epoch 1: Train Loss: 0.44462162027072705
+Epoch 2: Train Loss: 0.39470541572428486
+Epoch 3: Train Loss: 0.33704096625109065
+Epoch 4: Train Loss: 0.27101062421603234
+Epoch 5: Train Loss: 0.23368519945384075
+Epoch 6: Train Loss: 0.20211312764721892
+Epoch 7: Train Loss: 0.18298777107939418
+Epoch 8: Train Loss: 0.16626224147412255
+Epoch 9: Train Loss: 0.15606553692388966
+Epoch 10: Train Loss: 0.15560245839159495
+Accuracy: 0.9500, Precision: 0.9393, Recall: 0.9465, F1 Score: 0.9429
+Confusion Matrix: TP: 4706, FP: 304, FN: 266, TN: 6116

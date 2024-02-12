@@ -1,0 +1,5 @@
+X_train shape: (45567, 31)
+X_test shape: (11392, 31)
+Epoch 1: Train Loss: 0.44462162027072705
+Epoch 2: Train Loss: 0.39470541572428486
+Epoch 3: Train Loss: 0.33704096625109065

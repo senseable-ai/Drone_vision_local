@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.8.18",
+    "heartbeatAt": "2024-02-12T12:14:45.091101",
+    "startedAt": "2024-02-12T12:14:43.988835",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "c:\\Users\\user\\Desktop\\drone_vision_local\\test_trans.py",
+    "codePathLocal": "test_trans.py",
+    "codePath": "test_trans.py",
+    "git": {
+        "remote": "https://github.com/senseable-ai/drone_vision_local.git",
+        "commit": "30df0ba5d6085c10aeb12d82c77e756de24f0b1c"
+    },
+    "email": "imij0522@gmail.com",
+    "root": "C:/Users/user/Desktop/drone_vision_local",
+    "host": "DESKTOP-TP791I7",
+    "username": "user",
+    "executable": "c:\\Users\\user\\anaconda3\\envs\\torch5\\python.exe",
+    "cpu_count": 24,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 3000.0,
+        "min": 0.0,
+        "max": 3000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3000.0,
+            "min": 0.0,
+            "max": 3000.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 930.7388191223145,
+            "used": 784.7945785522461
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3070",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 31.747051239013672
+    }
+}

@@ -1,0 +1,27 @@
+2024-02-12 20:50:00,304 INFO    MainThread:29352 [wandb_setup.py:_flush():76] Current SDK version is 0.16.3
+2024-02-12 20:50:00,304 INFO    MainThread:29352 [wandb_setup.py:_flush():76] Configure stats pid to 29352
+2024-02-12 20:50:00,304 INFO    MainThread:29352 [wandb_setup.py:_flush():76] Loading settings from C:\Users\user\.config\wandb\settings
+2024-02-12 20:50:00,304 INFO    MainThread:29352 [wandb_setup.py:_flush():76] Loading settings from C:\Users\user\Desktop\drone_vision_local\wandb\settings
+2024-02-12 20:50:00,304 INFO    MainThread:29352 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-02-12 20:50:00,304 INFO    MainThread:29352 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-02-12 20:50:00,304 INFO    MainThread:29352 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'test_trans.py', 'program_abspath': 'c:\\Users\\user\\Desktop\\drone_vision_local\\test_trans.py', 'program': 'c:\\Users\\user\\Desktop\\drone_vision_local\\test_trans.py'}
+2024-02-12 20:50:00,305 INFO    MainThread:29352 [wandb_init.py:_log_setup():526] Logging user logs to C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_205000-ggpukmqc\logs\debug.log
+2024-02-12 20:50:00,305 INFO    MainThread:29352 [wandb_init.py:_log_setup():527] Logging internal logs to C:\Users\user\Desktop\drone_vision_local\wandb\run-20240212_205000-ggpukmqc\logs\debug-internal.log
+2024-02-12 20:50:00,305 INFO    MainThread:29352 [wandb_init.py:init():566] calling init triggers
+2024-02-12 20:50:00,305 INFO    MainThread:29352 [wandb_init.py:init():573] wandb.init called with sweep_config: {}
+config: {}
+2024-02-12 20:50:00,305 INFO    MainThread:29352 [wandb_init.py:init():616] starting backend
+2024-02-12 20:50:00,305 INFO    MainThread:29352 [wandb_init.py:init():620] setting up manager
+2024-02-12 20:50:00,308 INFO    MainThread:29352 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2024-02-12 20:50:00,310 INFO    MainThread:29352 [wandb_init.py:init():628] backend started and connected
+2024-02-12 20:50:00,316 INFO    MainThread:29352 [wandb_init.py:init():720] updated telemetry
+2024-02-12 20:50:00,343 INFO    MainThread:29352 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-02-12 20:50:00,944 ERROR   MainThread:29352 [wandb_init.py:init():779] encountered error: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+2024-02-12 20:50:01,180 ERROR   MainThread:29352 [wandb_init.py:init():1194] It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+Traceback (most recent call last):
+  File "c:\Users\user\anaconda3\envs\torch4\lib\site-packages\wandb\sdk\wandb_init.py", line 1176, in init
+    run = wi.init()
+  File "c:\Users\user\anaconda3\envs\torch4\lib\site-packages\wandb\sdk\wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+2024-02-12 20:50:02,194 WARNING MsgRouterThr:29352 [router.py:message_loop():77] message_loop has been closed
