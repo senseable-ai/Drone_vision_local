@@ -24,7 +24,7 @@ seed_everything()
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 # Initialize wandb
-wandb.init(project="final", entity="imjaegyun")
+wandb.init(project="final", entity="finnn")
 # Load data (You should define load_preprocessed_data function or replace it with actual data loading)
 X_train, X_test, y_train, y_test = load_preprocessed_data()
 class PositionalEncoding(nn.Module):
@@ -70,7 +70,7 @@ config = {
     "dropout": 0.1,
     "batch_size": 32,
     "learning_rate": 0.001,
-    "epochs": 10
+    "epochs": 100
 }
 def pad_and_create_tensors(sequences, labels, max_len=None):
     # 시퀀스를 고정 길이로 패딩하고 텐서로 변환하는 함수
@@ -110,20 +110,35 @@ optimizer = optim.Adam(model.parameters(), lr=config["learning_rate"])
 for epoch in range(config["epochs"]):
     model.train()
     train_loss = 0.0
+    correct_predictions = 0
+    total_predictions = 0
+    
     for inputs, targets in train_loader:
         inputs, targets = inputs.to(device), targets.to(device)
         optimizer.zero_grad()
+        
         outputs = model(inputs)
         loss = criterion(outputs.squeeze(), targets)
         loss.backward()
         optimizer.step()
+        
         train_loss += loss.item()
-    wandb.log({
-"Train Loss": train_loss / len(train_loader)
-})
-    print(f'Epoch {epoch+1}: Train Loss: {train_loss / len(train_loader)}')
+        
+        # 정확도 계산을 위한 코드
+        preds = torch.sigmoid(outputs).squeeze() > 0.5
+        correct_predictions += (preds == targets.byte()).sum().item()
+        total_predictions += targets.size(0)
+        
+    train_accuracy = correct_predictions / total_predictions
     
-    # Validation loop can be added here
+    # Epoch 당 평균 손실 및 정확도 로깅
+    wandb.log({
+        "Train Loss": train_loss / len(train_loader),
+        "Train Accuracy": train_accuracy,
+    })
+    
+    print(f'Epoch {epoch+1}: Train Loss: {train_loss / len(train_loader)}, Train Accuracy: {train_accuracy:.4f}')
+
 # Test loop and metrics calculation
 test_dataset = TensorDataset(X_test_padded, y_test_tensor)
 test_loader = DataLoader(test_dataset, batch_size=config["batch_size"], shuffle=False)
